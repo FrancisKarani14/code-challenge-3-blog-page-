@@ -18,6 +18,8 @@ nav ul{
     background-color:var(--navcolor) ;
     margin:20px 30%;
     padding: 10px;
+    border-radius: 2rem;
+    box-shadow: 0px 2px 5px black;
 }
 ul{
     list-style: none;
@@ -28,3 +30,41 @@ li a{
     font-weight: bold;
     font-size: 1rem;
 }
+li a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+.intro{
+    display: flex;
+    height: 100vh;
+    margin: 0 30px;
+    background-color: rgba(245, 245, 245, 0.541);
+}
+#about h1,
+#about h2,
+#about p 
+{
+  text-align: center;
+}
+#about p {
+    font-size: 1.3rem;
+}
+#about{
+    margin: 30px;
+    padding-top: 30vh;
+}
+.aboutImage img{
+    padding: 20px;
+    height: 100vh;
+    
+
+}
+button {
+  display: block;
+  margin: 0 auto;
+  background-color: #0615fa;
+  font-size: 1.2rem;
+  padding: 5px;
+  cursor: pointer;
+}
+
