@@ -8,9 +8,19 @@
     --navcolor:#fbfcfc;
     --footercolor:#2980b9;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: var(--bgcolor);
 }
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 nav ul{
     display: flex;
     justify-content: center;
@@ -20,6 +30,7 @@ nav ul{
     padding: 10px;
     border-radius: 2rem;
     box-shadow: 0px 2px 5px black;
+    
 }
 ul{
     list-style: none;
@@ -34,11 +45,15 @@ li a:hover{
     color: blue;
     text-decoration: underline;
 }
+li a:active{
+    color: red;
+}
 .intro{
     display: flex;
     height: 100vh;
     margin: 0 30px;
     background-color: rgba(245, 245, 245, 0.541);
+    box-shadow: 2px 2px 3px black;
 }
 #about h1,
 #about h2,
@@ -59,12 +74,22 @@ li a:hover{
     
 
 }
-button {
+#about button {
   display: block;
   margin: 0 auto;
   background-color: #0615fa;
   font-size: 1.2rem;
   padding: 5px;
   cursor: pointer;
+}
+#blogs h2{
+    margin-top: 20px;
+    text-align: center;
+}
+#blogs{
+    height: 100vh;
+}
+#form{
+    height: 50vh;
 }
 
