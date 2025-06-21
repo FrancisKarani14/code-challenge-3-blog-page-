@@ -1,0 +1,30 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+:root{
+    --bgcolor:#85c1e9;
+    --navcolor:#fbfcfc;
+    --footercolor:#2980b9;
+}
+body{
+    background-color: var(--bgcolor);
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color:var(--navcolor) ;
+    margin:20px 30%;
+    padding: 10px;
+}
+ul{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
