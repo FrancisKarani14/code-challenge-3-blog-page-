@@ -11,8 +11,8 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#blogs">Blogs</a></li>
             <li><a href="#form">add Blogs</a></li>
+            <li><a href="#blogs">Blogs</a></li>
             <li><a href="#footer">Reviews and contacts</a></li>
         </ul>
     </nav>
@@ -29,15 +29,16 @@
    <div id="form">
     <form id="myForm">
         <h2>add a blog</h2>
-        <input type="text" id="title" placeholder="Enter the title"><br>
+        <input type="text" id="title" placeholder="Enter the title">
 
-        <input type="text" id="category" placeholder="Enter the category"><br>
+        <input type="text" id="category" placeholder="Enter the category">
 
-        <input type="text" id="image" placeholder="Enter the image url"><br>
+        <input type="text" id="image" placeholder="Enter the image url">
 
-         <input type="text" id="author" placeholder="Enter the author name"><br>
+         <input type="text" id="author" placeholder="Enter the author name">
 
-         <input type="text" id="content" placeholder="Enter the blog content"><br>
+         <!-- <input type="" id="content" placeholder="Enter the blog content"><br> -->
+          <textarea name="content" id="blogcontent" placeholder="enter yout blog content"></textarea>
 
          <input type="date" id="date" placeholder="Enter the publishing date"><br>
          <button>add blog</button>
@@ -50,6 +51,7 @@
     <h2>blog list</h2>
 
    </div>
+   <footer id="footer"></footer>
 
    <script src="./index.js"></script> 
 </body>
