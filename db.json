@@ -1,0 +1,59 @@
+{
+    "transport":[
+  {
+    "id": 1,
+    "title": "Exploring Nairobi's Matatu Culture",
+    "category": "Public Transport",
+    "image": "https://images.unsplash.com/photo-1558981001-5fdfb3d5d8d6",
+    "author": "Francis Karani",
+    "content": "Matatus are more than just a mode of transport in Nairobi—they are a bold expression of creativity and identity. From their colorful graffiti-style art to booming music systems, matatus reflect the heartbeat of urban Kenya. They follow flexible routes and offer affordable travel, but navigating their system can be confusing for newcomers. Despite occasional chaos, they remain a symbol of freedom and youth culture in the city.",
+    "date": "2025-06-01"
+  },
+  {
+    "id": 2,
+    "title": "Tips for Long-Distance Bus Travel in Kenya",
+    "category": "Intercity Travel",
+    "image": "https://images.unsplash.com/photo-1598256982956-7ed0e5d40a64",
+    "author": "Jane Mwangi",
+    "content": "Traveling across Kenya by bus can be an adventure, but preparation is key. Always book with a reputable company, especially for night journeys. Arrive early, pack light, and carry snacks and water. Most buses make scheduled rest stops, and the experience can be both scenic and social. From Nairobi to Mombasa or Kisumu, buses offer a cost-effective alternative to flights or private cars.",
+    "date": "2025-06-03"
+  },
+  {
+    "id": 3,
+    "title": "The Rise of Boda Bodas in Urban Kenya",
+    "category": "Motorbike Transport",
+    "image": "https://images.unsplash.com/photo-1572383678651-91ebf2f252d1",
+    "author": "Daniel Otieno",
+    "content": "Boda bodas, or motorbike taxis, have become an essential part of Kenya's urban transport. Their ability to zip through traffic and reach narrow or remote areas makes them extremely convenient. However, safety remains a concern. Helmets are often ignored, and many riders lack proper training. As the industry grows, regulation and rider education will be vital for reducing accidents and improving reliability.",
+    "date": "2025-06-05"
+  },
+  {
+    "id": 4,
+    "title": "Using Ride Apps Like Uber and Bolt",
+    "category": "Digital Transport",
+    "image": "https://images.unsplash.com/photo-1618381575804-f7d3471dbdce",
+    "author": "Faith Njeri",
+    "content": "Ride-hailing apps have changed the way people move around Kenyan cities. With just a few taps, you can summon a car or boda boda and get a fare estimate instantly. Apps like Uber, Bolt, and Little Cab offer convenience and digital payment options. To stay safe, always double-check driver details, share your ride with someone you trust, and avoid long conversations about personal information with drivers.",
+    "date": "2025-06-08"
+  },
+  {
+    "id": 5,
+    "title": "Nairobi Expressway: What You Need to Know",
+    "category": "Infrastructure",
+    "image": "https://images.unsplash.com/photo-1563132338-e4e11992f884",
+    "author": "Alex Kimathi",
+    "content": "The Nairobi Expressway has significantly eased traffic flow for motorists traveling between Mlolongo, the CBD, and Westlands. It’s a toll road with digital and manual payment options. Though it saves time, toll fees can add up, especially during peak hours. Motorists should familiarize themselves with entry/exit points and consider the expressway only when time is more valuable than the toll cost.",
+    "date": "2025-06-10"
+  },
+  {
+    "id": 6,
+    "title": "Cycling in the City: A Commuter's Guide",
+    "category": "Eco Transport",
+    "image": "https://images.unsplash.com/photo-1589571894960-20bbe2828da8",
+    "author": "Susan Wambui",
+    "content": "Cycling is gaining popularity in Nairobi and other cities as a healthy, low-cost alternative to car travel. With more people concerned about traffic and pollution, bikes are becoming a practical choice for short commutes. However, infrastructure is still lacking in most areas. Cyclists must remain alert, wear helmets, and use reflective gear. As awareness grows, so does the push for safer, bike-friendly roads.",
+    "date": "2025-06-12"
+  }
+]
+
+}
