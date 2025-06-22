@@ -23,14 +23,22 @@
    
       
       **Instalation and Setup**
-                  **Git Clone**
+
+    
+                  
   -  git clone https://github.com/FrancisKarani14/blog-app.git
   -  code . to open it to your text editor
   -  IF you want to view it live, paste https://franciskarani14.github.io/code-challenge-3-blog-page-/ in a tab of your prefered browser.
   -  to view it live you will need either a laptop, desktop, tablet,or smartphone a stable internet and a browser.
+ 
+
 
       **Author**
+     
      Francis Karani (franciskarani14)
+ 
+  
      **Licence**
+     
      MIT Licence
 this project is public and free to be used by anyone. either commercially or for experimantal purposes. Also feel free to contribute.    
