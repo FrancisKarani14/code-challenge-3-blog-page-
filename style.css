@@ -195,4 +195,126 @@ footer{
   color: #ffffff;
   font-size: 1.2rem;
 }
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .intro {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+  }
+
+  .aboutImage img {
+    width: 100%;
+    height: auto;
+  }
+
+  #blogs .blog-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  #myForm {
+    width: 95vw;
+  }
+
+  .footerInfo, .social-links {
+    text-align: center;
+  }
+
+  .right {
+    font-size: 1rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  nav ul {
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .intro {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .aboutImage img {
+    width: 100%;
+    height: auto;
+  }
+
+  #myForm {
+    width: 90vw;
+  }
+
+  #blogs .blog-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #blogs .blog-card {
+    flex: 1 1 calc(50% - 40px); /* 2 columns */
+    max-width: 100%;
+  }
+
+  #myForm {
+    width: 80vw;
+  }
+
+  .intro {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .aboutImage img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #blogs .blog-card {
+    flex: 1 1 calc(33.33% - 40px); /* 3 columns */
+  }
+
+  #myForm {
+    width: 70vw;
+  }
+}
+
+/* Extra large devices (1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  #blogs .blog-card {
+    flex: 1 1 calc(33.33% - 40px);
+  }
+
+  #myForm {
+    width: 60vw;
+  }
+}
+
+/* XXL devices (very large screens, 1400px and up) */
+@media (min-width: 1400px) and (max-width: 1799.98px) {
+  #blogs .blog-card {
+    flex: 1 1 calc(25% - 40px); /* 4 columns on large screens */
+  }
+}
+
+/* Ultra-wide screens (1800px and up) */
+@media (min-width: 1800px) {
+  #blogs .blog-card {
+    flex: 1 1 calc(20% - 40px); /* 5 columns */
+  }
+}
+
 
