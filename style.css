@@ -6,7 +6,7 @@
 :root{
     --bgcolor:#85c1e9;
     --navcolor:#fbfcfc;
-    --footercolor:#2980b9;
+    --footercolor:#424949;
 }
 html{
     scroll-behavior: smooth;
@@ -15,7 +15,7 @@ html{
 body{
     background-color: var(--bgcolor);
 }
-nav {
+header nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -133,5 +133,50 @@ li a:active{
 #myForm button:hover {
   background-color: #1c5f8a;
 }
+/* Layout styling for the section */
+.social-links {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
 
+/* Styling each paragraph */
+.social-links p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* Styling the icons */
+.social-links i {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for icons */
+.social-links a:hover i {
+  color: #007bff; /* or the brand color of the platform */
+}
+
+/* Optional: Remove link underline */
+.social-links a {
+  text-decoration: none;
+}
+footer{
+  background-color: var(--footercolor);
+}
+.right{
+  font-size: 1.5rem;
+}
+.footerInfo{
+  margin-left: 30px;
+}
+.footerInfo p{
+  color: #ffffff;
+  font-size: 1.2rem;
+}
 
