@@ -10,15 +10,6 @@
       "date": "2025-06-01"
     },
     {
-      "id": 2,
-      "title": "Tips for Long-Distance Bus Travel in Kenya",
-      "category": "Intercity Travel",
-      "image": "https://media.istockphoto.com/id/2183947553/photo/intercity-buses-are-parked-in-the-parking-lot.jpg?s=612x612&w=0&k=20&c=z-0Iho-LSQg-i7bt8aeZgdlfUaawlKTitxKXHWWSlHI=",
-      "author": "Charles Muraya",
-      "content": "Traveling across Kenya by bus can be an adventure, but preparation is key. Always book with a reputable company, especially for night journeys. Arrive early, pack light, and carry snacks and water. Most buses make scheduled rest stops, and the experience can be both scenic and social. From Nairobi to Mombasa or Kisumu, buses offer a cost-effective alternative to flights or private cars.",
-      "date": "2025-06-03"
-    },
-    {
       "id": 3,
       "title": "The Rise of Boda Bodas in Urban Kenya",
       "category": "Motorbike Transport",
@@ -44,15 +35,6 @@
       "author": "Felista Wairimu",
       "content": "The Nairobi Expressway has significantly eased traffic flow for motorists traveling between Mlolongo, the CBD, and Westlands. It’s a toll road with digital and manual payment options. Though it saves time, toll fees can add up, especially during peak hours. Motorists should familiarize themselves with entry/exit points and consider the expressway only when time is more valuable than the toll cost.",
       "date": "2025-06-10"
-    },
-    {
-      "id": 6,
-      "title": "Cycling in the City: A Commuter's Guide",
-      "category": "Eco Transport",
-      "image": "https://media.istockphoto.com/id/2120819158/photo/life-in-african-village-african-travel-concept-scene-from-a-local-african-market.jpg?s=612x612&w=0&k=20&c=66pwUWDj4KgKnJIVlNmmdP3DQAI2PVsfkZkszwJLW2M=",
-      "author": "Susan Wambui",
-      "content": "Cycling is gaining popularity in Nairobi and other cities as a healthy, low-cost alternative to car travel. With more people concerned about traffic and pollution, bikes are becoming a practical choice for short commutes. However, infrastructure is still lacking in most areas. Cyclists must remain alert, wear helmets, and use reflective gear. As awareness grows, so does the push for safer, bike-friendly roads.",
-      "date": "2025-06-12"
     }
   ]
 }

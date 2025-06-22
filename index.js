@@ -1,95 +1,163 @@
-// declare variables
-const nameInput = document.getElementById("title");
-const category = document.getElementById("category");
-const image = document.getElementById("image");
+// Select form inputs
+const form = document.getElementById("myForm");
+const blogs = document.getElementById("blogs");
+
+const titleInput = document.getElementById("title");
+const categoryInput = document.getElementById("category");
+const imageInput = document.getElementById("image");
 const authorInput = document.getElementById("author");
-const content = document.getElementById("blogContent");
-const date = document.getElementById("date");
+const contentInput = document.getElementById("blogContent");
+const dateInput = document.getElementById("date");
 
+let updateId = null;
 
-// create card
-function createCard(transport) {
+// Create blog card with styled buttons and icons
+function createCard(blog) {
   return `
-    <div class="blog-card" data-id="${transport.id}" style="background:rgba(245, 245, 245, 0.541); padding:24px; border:1px solid #eee; box-shadow:5px 5px 9px rgba(0,0,0,0.08); margin-bottom:16px; transition:all 0.3s ease;">
-      <h3 style="font-size:1.25rem; font-weight:600; color:#000004; margin-bottom:8px;">${transport.title}</h3>
-      <h2 style="font-size:1rem; font-weight:500; color:#000004; margin-bottom:10px;">${transport.category}</h2>
-      <img src="${transport.image}" alt="${transport.title}" width="260px" style="display:block; margin:10px 0;">
-      <h3 style="font-size:1rem; font-weight:600; color:#000004; margin-bottom:8px;">${transport.author}</h3>
-      <p style="font-size:1rem; color:#000004;">${transport.content}</p>
-      <h3 style="font-size:1rem; font-weight:600; color:#000004; margin-bottom:8px;">${transport.date}</h3>
+    <div class="blog-card" data-id="${blog.id}" style="background:rgba(245, 245, 245, 0.541); padding:24px; border:1px solid #eee; box-shadow:5px 5px 9px rgba(0,0,0,0.08); margin-bottom:16px; transition:all 0.3s ease;">
+      <h3 style="font-size:1.25rem; font-weight:600; color:#000004; margin-bottom:8px;">${blog.title}</h3>
+      <h4 style="font-size:1rem; font-weight:500; color:#000004; margin-bottom:10px;">${blog.category}</h4>
+      <img src="${blog.image}" alt="${blog.title}" width="260px" style="display:block; margin:10px 0;">
+      <h4 style="font-size:1rem; font-weight:600; color:#000004; margin-bottom:8px;">By ${blog.author}</h4>
+      <p style="font-size:1rem; color:#000004;">${blog.content}</p>
+      <h5 style="font-size:1rem; font-weight:600; color:#000004; margin-bottom:8px;">Published: ${blog.date}</h5>
 
-      <button class="delete" style="background:#FF0000; color:#fff; padding:8px 12px; border:none; border-radius:4px; cursor:pointer; margin-right:10px;">
+      <button class="delete" data-id="${blog.id}" style="background:#FF0000; color:#fff; padding:8px 12px; border:none; border-radius:4px; cursor:pointer; margin-right:10px;">
         <i class="fi fi-sr-trash"></i> Delete
       </button>
-      <button class="update" style="background:#1efb03; color:#000; padding:8px 12px; border:none; border-radius:4px; cursor:pointer;">
+      <button class="update" data-id="${blog.id}" style="background:#1efb03; color:#000; padding:8px 12px; border:none; border-radius:4px; cursor:pointer;">
         <i class="fi fi-sr-rotate-square"></i> Update
       </button>
     </div>
   `;
 }
 
-// fetch data from db.json
+// Fetch and display blogs
 function fetchBlogs() {
   fetch("http://localhost:3000/transport")
     .then(res => res.json())
-    .then(Data => {
-      Data.forEach(transport => {
-        blogs.innerHTML += createCard(transport);
+    .then(data => {
+      blogs.innerHTML = "";
+      data.forEach(blog => {
+        blogs.innerHTML += createCard(blog);
       });
     })
-    .catch(error => {
-      console.error("Error fetching blogs:", error);
-      blogs.innerHTML = "<p>Error loading data</p>";
-    });
+    .catch(err => console.error("Fetch error:", err));
 }
 
-document.addEventListener("DOMContentLoaded", fetchBlogs);
+// Handle new blog post submission only
+function setupPostHandler() {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-// post new blog from form
-document.getElementById("myForm").addEventListener("submit", (event) => {
-  event.preventDefault();
+    const blogData = {
+      title: titleInput.value,
+      category: categoryInput.value,
+      image: imageInput.value,
+      author: authorInput.value,
+      content: contentInput.value,
+      date: dateInput.value,
+    };
 
-  const validImageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
-
-  const newBlog = {
-    title: nameInput.value,
-    category: category.value,
-    image: image.value,
-    author: authorInput.value,
-    content: content.value,
-    date: date.value,
-  };
-
-  fetch("http://localhost:3000/transport", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newBlog),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      blogs.innerHTML += createCard(data);
-      document.getElementById("myForm").reset();
+    fetch("http://localhost:3000/transport", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blogData),
     })
-    .catch((err) => console.error("POST error:", err));
-});
-
-// delete blog post
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("delete") || event.target.closest(".delete")) {
-    const blogCard = event.target.closest(".blog-card");
-    const blogId = blogCard.dataset.id;
-
-    if (confirm("Are you sure you want to delete this blog?")) {
-      fetch(`http://localhost:3000/transport/${blogId}`, {
-        method: "DELETE"
+      .then(res => res.json())
+      .then(data => {
+        blogs.innerHTML += createCard(data);
+        form.reset();
       })
-        .then((res) => {
-          if (!res.ok) throw new Error("Failed to delete blog.");
-          blogCard.remove();
-        })
-        .catch((err) => console.error("Delete error:", err));
+      .catch(err => console.error("POST error:", err));
+  });
+}
+
+// Handle Delete and Update buttons
+function setupBlogInteraction() {
+  blogs.addEventListener("click", (e) => {
+    const blogId = e.target.closest("button")?.dataset.id;
+
+    if (e.target.closest(".delete")) {
+      const confirmDelete = confirm("Are you sure you want to delete this blog?");
+      if (!confirmDelete) return;
+
+      fetch(`http://localhost:3000/transport/${blogId}`, {
+        method: "DELETE",
+      })
+        .then(() => fetchBlogs())
+        .catch(err => console.error("Delete error:", err));
     }
-  }
-});
+
+    if (e.target.closest(".update")) {
+      fetch(`http://localhost:3000/transport/${blogId}`)
+        .then(res => res.json())
+        .then(data => {
+          // Fill form fields for update
+          titleInput.value = data.title;
+          categoryInput.value = data.category;
+          imageInput.value = data.image;
+          authorInput.value = data.author;
+          contentInput.value = data.content;
+          dateInput.value = data.date;
+
+          updateId = blogId;
+          addUpdateButton();
+          window.scrollTo({ top: form.offsetTop, behavior: "smooth" });
+        });
+    }
+  });
+}
+
+// Create and attach a separate "Confirm Update" button
+function addUpdateButton() {
+  if (document.getElementById("confirmUpdate")) return;
+
+  const updateBtn = document.createElement("button");
+  updateBtn.id = "confirmUpdate";
+  updateBtn.textContent = "Confirm Update";
+  updateBtn.style.background = "#e67e22";
+  updateBtn.style.color = "#fff";
+  updateBtn.style.padding = "10px 16px";
+  updateBtn.style.marginTop = "10px";
+  updateBtn.style.border = "none";
+  updateBtn.style.borderRadius = "5px";
+  updateBtn.style.cursor = "pointer";
+
+  form.appendChild(updateBtn);
+
+  updateBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const updatedData = {
+      title: titleInput.value,
+      category: categoryInput.value,
+      image: imageInput.value,
+      author: authorInput.value,
+      content: contentInput.value,
+      date: dateInput.value,
+    };
+
+    fetch(`http://localhost:3000/transport/${updateId}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedData),
+    })
+      .then(res => res.json())
+      .then(() => {
+        fetchBlogs();
+        form.reset();
+        updateId = null;
+        updateBtn.remove();
+      })
+      .catch(err => console.error("Update error:", err));
+  });
+}
+
+// Initialize everything
+function main() {
+  fetchBlogs();
+  setupPostHandler();
+  setupBlogInteraction();
+}
+
+document.addEventListener("DOMContentLoaded", main);

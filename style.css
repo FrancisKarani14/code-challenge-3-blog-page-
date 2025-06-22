@@ -3,11 +3,13 @@
     padding: 0%;
     box-sizing: border-box;
 }
+/* root color variables for easier and more controlled color styling */
 :root{
     --bgcolor:#85c1e9;
     --navcolor:#fbfcfc;
     --footercolor:#424949;
 }
+/* set the scroll behavior to smooth */
 html{
     scroll-behavior: smooth;
     /* margin-top: 100px; */
