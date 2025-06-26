@@ -34,7 +34,7 @@ function createCard(blog) {
 
 // Fetch and display blogs
 function fetchBlogs() {
-  fetch("http://localhost:3000/transport")
+  fetch("https://json-server-5t30.onrender.com/transport")
     .then(res => res.json())
     .then(data => {
       blogs.innerHTML = "";
@@ -59,7 +59,7 @@ function setupPostHandler() {
       date: dateInput.value,
     };
 
-    fetch("http://localhost:3000/transport", {
+    fetch("https://json-server-5t30.onrender.com/transport", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blogData),
