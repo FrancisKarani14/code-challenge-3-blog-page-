@@ -82,7 +82,7 @@ function setupBlogInteraction() {
       const confirmDelete = confirm("Are you sure you want to delete this blog?");
       if (!confirmDelete) return;
 
-      fetch(`http://localhost:3000/transport/${blogId}`, {
+      fetch(`https://json-server-5t30.onrender.com${blogId}`, {
         method: "DELETE",
       })
         .then(() => fetchBlogs())
@@ -90,7 +90,7 @@ function setupBlogInteraction() {
     }
 
     if (e.target.closest(".update")) {
-      fetch(`http://localhost:3000/transport/${blogId}`)
+      fetch(`https://json-server-5t30.onrender.com${blogId}`)
         .then(res => res.json())
         .then(data => {
           // Fill form fields for update
@@ -137,7 +137,7 @@ function addUpdateButton() {
       date: dateInput.value,
     };
 
-    fetch(`http://localhost:3000/transport/${updateId}`, {
+    fetch(`https://json-server-5t30.onrender.com${updateId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedData),
