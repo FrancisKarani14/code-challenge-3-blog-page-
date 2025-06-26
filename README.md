@@ -22,7 +22,7 @@
     - Flaticon - the source of the Icons used
    
       
-      **Instalation and Setup**
+      #Instalation and Setup
 
     
                   
@@ -30,9 +30,9 @@
   -  code . to open it to your text editor
   -  Run Json-server by using
   -  json-server --watch db.json
-  -  IF you want to view it live, paste https://franciskarani14.github.io/code-challenge-3-blog-page-/ in a tab of your prefered browser.
+  -  IF you want to view it live, paste (https://franciskarani14.github.io/code-challenge-3-blog-page-/) in a tab of your prefered browser.
   -  to view it live you will need either a laptop, desktop, tablet,or smartphone a stable internet and a browser.
-  -  viewing it live will have some limitations since you must have the derver running
+    
  
 
 
@@ -44,4 +44,10 @@
      **Licence**
      
      MIT Licence
-this project is public and free to be used by anyone. either commercially or for experimantal purposes. Also feel free to contribute.    
+copyright @2025 Francis Karani
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  
