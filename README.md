@@ -15,6 +15,8 @@
 
 
     **Technologies used**
+ 
+    
     -HTML - for structure
     -CSS - for styling
     -Vanila - Javascript for functionality
