@@ -2,7 +2,7 @@
 
 
 **Description**
-- This is a page where traveling blogs are posted. it allows a user to see, delete, and add blogs. It is part of my Software engineering learning journey and is meant to test and sharpen my skills in DOM Manipulation and communicating with the server using CRUD.
+- This is a page where traveling blogs are posted. it allows a user to see, delete,  add and updated blogs. It is part of my Software engineering learning journey and is meant to test and sharpen my skills in DOM Manipulation and communicating with the server using CRUD.
 
 
   **Features**
