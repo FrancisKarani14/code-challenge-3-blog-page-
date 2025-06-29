@@ -11,17 +11,16 @@ const dateInput = document.getElementById("date");
 
 let updateId = null;
 
-// Create blog card with styled buttons and icons
+// Create blog card
 function createCard(blog) {
   return `
-    <div class="blog-card" data-id="${blog.id}" style="background:rgba(245, 245, 245, 0.541); padding:24px; border:1px solid #eee; box-shadow:5px 5px 9px rgba(0,0,0,0.08); margin-bottom:16px; transition:all 0.3s ease;">
-      <h3 style="font-size:1.25rem; font-weight:600; color:#000004; margin-bottom:8px;">${blog.title}</h3>
-      <h4 style="font-size:1rem; font-weight:500; color:#000004; margin-bottom:10px;">${blog.category}</h4>
+    <div class="blog-card" data-id="${blog.id}" style="background:rgba(245, 245, 245, 0.541); padding:24px; border:1px solid #eee; box-shadow:5px 5px 9px rgba(0,0,0,0.08); margin-bottom:16px;">
+      <h3>${blog.title}</h3>
+      <h4>${blog.category}</h4>
       <img src="${blog.image}" alt="${blog.title}" width="260px" style="display:block; margin:10px 0;">
-      <h4 style="font-size:1rem; font-weight:600; color:#000004; margin-bottom:8px;">By ${blog.author}</h4>
-      <p style="font-size:1rem; color:#000004;">${blog.content}</p>
-      <h5 style="font-size:1rem; font-weight:600; color:#000004; margin-bottom:8px;">Published: ${blog.date}</h5>
-
+      <h4>By ${blog.author}</h4>
+      <p>${blog.content}</p>
+      <h5>Published: ${blog.date}</h5>
       <button class="delete" data-id="${blog.id}" style="background:#FF0000; color:#fff; padding:8px 12px; border:none; border-radius:4px; cursor:pointer; margin-right:10px;">
         <i class="fi fi-sr-trash"></i> Delete
       </button>
@@ -32,7 +31,7 @@ function createCard(blog) {
   `;
 }
 
-// Fetch and display blogs
+// Fetch and display all blogs
 function fetchBlogs() {
   fetch("https://json-server-5t30.onrender.com/transport")
     .then(res => res.json())
@@ -45,7 +44,7 @@ function fetchBlogs() {
     .catch(err => console.error("Fetch error:", err));
 }
 
-// Handle new blog post submission only
+// Handle blog form submission
 function setupPostHandler() {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -73,27 +72,28 @@ function setupPostHandler() {
   });
 }
 
-// Handle Delete and Update buttons
+// Handle delete and update button clicks
 function setupBlogInteraction() {
   blogs.addEventListener("click", (e) => {
     const blogId = e.target.closest("button")?.dataset.id;
 
+    // DELETE
     if (e.target.closest(".delete")) {
       const confirmDelete = confirm("Are you sure you want to delete this blog?");
       if (!confirmDelete) return;
 
-      fetch(`https://json-server-5t30.onrender.com/transport${blogId}`, {
+      fetch(`https://json-server-5t30.onrender.com/transport/${blogId}`, {
         method: "DELETE",
       })
         .then(() => fetchBlogs())
         .catch(err => console.error("Delete error:", err));
     }
 
+    // UPDATE
     if (e.target.closest(".update")) {
-      fetch(`https://json-server-5t30.onrender.com/transport${blogId}`)
+      fetch(`https://json-server-5t30.onrender.com/transport/${blogId}`)
         .then(res => res.json())
         .then(data => {
-          // Fill form fields for update
           titleInput.value = data.title;
           categoryInput.value = data.category;
           imageInput.value = data.image;
@@ -109,7 +109,7 @@ function setupBlogInteraction() {
   });
 }
 
-// Create and attach a separate "Confirm Update" button
+// Add confirm update button
 function addUpdateButton() {
   if (document.getElementById("confirmUpdate")) return;
 
@@ -128,6 +128,7 @@ function addUpdateButton() {
 
   updateBtn.addEventListener("click", (e) => {
     e.preventDefault();
+
     const updatedData = {
       title: titleInput.value,
       category: categoryInput.value,
@@ -137,7 +138,7 @@ function addUpdateButton() {
       date: dateInput.value,
     };
 
-    fetch(`https://json-server-5t30.onrender.com/transport${updateId}`, {
+    fetch(`https://json-server-5t30.onrender.com/transport/${updateId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedData),
@@ -153,7 +154,7 @@ function addUpdateButton() {
   });
 }
 
-// Initialize everything
+// Initialize
 function main() {
   fetchBlogs();
   setupPostHandler();
