@@ -45,13 +45,21 @@
 
 
   -  json-server --watch db.json
+ 
+
+  
 
 **live viewing*
 
 
+
 **Requirements**
 
+
+
 -Laptop/ smartphone /desktop
+
+
 
 -Stable internet
 
