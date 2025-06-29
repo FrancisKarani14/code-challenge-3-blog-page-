@@ -18,9 +18,16 @@
  
     
     -HTML - for structure
-    -CSS - for styling
+    
+
+     -CSS - for styling
+ 
+    
     -Vanila - Javascript for functionality
+ 
+    
     -Json server / db.Json - for dummy data
+    
     - Flaticon - the source of the Icons used
    
       
@@ -29,11 +36,29 @@
     
                   
   -  git clone https://github.com/FrancisKarani14/blog-app.git
+
+
   -  code . to open it to your text editor
+
+
   -  Run Json-server by using
+
+
   -  json-server --watch db.json
-  -  IF you want to view it live, paste (https://franciskarani14.github.io/code-challenge-3-blog-page-/) in a tab of your prefered browser.
-  -  to view it live you will need either a laptop, desktop, tablet,or smartphone a stable internet and a browser.
+
+**live viewing*
+
+
+**Requirements**
+
+-Laptop/ smartphone /desktop
+
+-Stable internet
+
+
+
+paste (https://franciskarani14.github.io/code-challenge-3-blog-page-/) in a tab of your prefered browser.
+ 
     
  
 
