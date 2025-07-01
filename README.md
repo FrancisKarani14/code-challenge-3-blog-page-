@@ -31,7 +31,7 @@
     - Flaticon - the source of the Icons used
    
       
-      #Instalation and Setup
+     ** #Instalation and Setup**
 
     
                   
